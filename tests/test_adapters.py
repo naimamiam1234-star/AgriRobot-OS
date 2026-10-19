@@ -19,3 +19,13 @@ class AdapterTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             ai=LocalAI({'vision_model':str(Path(d)/'missing.pt')})
             self.assertEqual(ai.inspect_image('$(touch /tmp/should-not-exist)')['status'],'unavailable')
+
+    def test_speech_fallback_is_explicit_and_validates_input(self):
+        from unittest.mock import patch
+        ai = LocalAI({'speech_engine':'espeak-ng'})
+        with patch('app.ai.shutil.which',return_value='/usr/bin/espeak-ng'), patch('app.ai.subprocess.run') as run:
+            result = ai.speak('مرحبا','/tmp/voice.wav')
+            self.assertEqual(result.get('engine'),'espeak-ng_formant')
+            self.assertEqual(run.call_args.args[0][1:3],['-v','ar'])
+            self.assertEqual(run.call_args.kwargs['input'],'مرحبا'.encode())
+        with self.assertRaises(ValueError): ai.speak('', '/tmp/voice.wav')

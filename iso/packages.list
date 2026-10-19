@@ -12,3 +12,6 @@ curl
 sudo
 build-essential
 cmake
+python3-venv
+python3-opencv
+espeak-ng

@@ -63,8 +63,17 @@ class LocalAI:
                 return {'status': 'error', 'reason': 'transcription_failed'}
 
     def speak(self, text, output_path):
-        if not isinstance(text, str) or len(text) > 4000:
+        if not isinstance(text, str) or not 0 < len(text) <= 4000:
             raise ValueError('invalid_speech_text')
+        if self.config.get('speech_engine') == 'espeak-ng':
+            exe = shutil.which('espeak-ng')
+            if not exe: return self.unavailable('espeak_ng_not_installed')
+            try:
+                subprocess.run([exe, '-v', 'ar', '-w', str(Path(output_path).resolve()), '--stdin'],
+                               input=text.encode(), timeout=60, capture_output=True, check=True)
+                return {'status':'ok', 'path':str(output_path), 'engine':'espeak-ng_formant'}
+            except (OSError, subprocess.SubprocessError):
+                return {'status':'error', 'reason':'speech_failed'}
         model = self.config.get('piper_model', '')
         exe = shutil.which('piper')
         if not exe or not model or not Path(model).is_file():
@@ -81,12 +90,9 @@ class LocalAI:
         if not model or not Path(model).is_file() or not Path(path).is_file():
             return self.unavailable('vision_model_or_image_not_installed')
         try:
-            from ultralytics import YOLO
+            from .vision import inspect_image
+            return inspect_image(model, path)
         except ImportError:
-            return self.unavailable('ultralytics_not_installed')
-        try:
-            result = YOLO(model).predict(source=str(Path(path).resolve()), device='cpu', verbose=False)[0]
-            return {'status': 'ok', 'general_detector_not_crop_diagnosis': True,
-                    'detections': json.loads(result.to_json())}
+            return self.unavailable('onnx_runtime_or_opencv_not_installed')
         except Exception:
             return {'status': 'error', 'reason': 'vision_inference_failed'}

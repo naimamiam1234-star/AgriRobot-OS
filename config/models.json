@@ -2,9 +2,10 @@
   "language_model": "models/Qwen3-0.6B-Q4_0.gguf",
   "local_port": 8081,
   "whisper_model": "models/ggml-tiny.bin",
-  "piper_model": "models/ar_JO-kareem-medium.onnx",
-  "vision_model": "models/yolo11n.pt",
-  "status": "downloadable_verified_manifest_engines_not_bundled",
+  "piper_model": "",
+  "vision_model": "models/yolo11n.onnx",
+  "status": "bundled_by_iso_builder_requires_validation_report",
   "smolvlm": "optional_not_integrated",
-  "note": "Verify every model license, exact revision and SHA256 before installing. Piper additionally needs its .onnx.json configuration. No agricultural model is trained in this release."
+  "note": "YOLO11n is a general COCO detector, not a plant or insect disease classifier. Piper voice not bundled: license review incomplete.",
+  "speech_engine": "espeak-ng"
 }

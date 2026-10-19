@@ -37,3 +37,7 @@ Resuming approved ISO plan tasks 3, 5 and 6 under executing-plans.
 Ruling: compile pinned llama.cpp b6000 and whisper.cpp v1.7.5 inside target rootfs; preserve verified source archives in ISO. Generic CPU build, no GPU required. Cost: lower performance than per-device tuning.
 Added real network-isolated inference gate before ISO packaging (Qwen Arabic response, Whisper English reference recording). Arabic transcription accuracy and agronomic accuracy remain not evaluated.
 Readiness now distinguishes installed files from healthy inference; 33 unit tests pass locally. ISO/inference build result pending.
+
+Ruling: export generic YOLO11n to ONNX; install ONNX Runtime and OpenCV without PyTorch in target. Cost: custom postprocessing needs validation; two overlap/low-confidence regression tests added.
+Ruling: use explicit eSpeak NG Arabic formant voice instead of redistributing unclear Piper voice dataset. Cost: less natural speech. 36 unit tests pass after preserving the existing models_bundled API key with evidence-based value.
+Added actual ISO BIOS/UEFI boot gate, no NIC, serial API readiness marker; tests pending on build runner. No physical control or crop-trained model claim.

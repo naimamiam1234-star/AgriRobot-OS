@@ -45,6 +45,15 @@
       "sha256": "37d66f2a4dd6d3d13d9ffcebd376b9e865a1737df61d3618ba79de7a9ac0f81e",
       "size": 6217890,
       "license": "MIT"
+    },
+    {
+      "path": "models/yolo11n.pt",
+      "url": "https://huggingface.co/Ultralytics/YOLO11/resolve/8b8ac7d1fae7468f85dbf89670dd66f41f485aab/yolo11n.pt",
+      "source_page": "https://huggingface.co/Ultralytics/YOLO11",
+      "revision": "8b8ac7d1fae7468f85dbf89670dd66f41f485aab",
+      "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+      "size": 5613764,
+      "license": "AGPL-3.0"
     }
   ],
   "note": "Verified weights, full PlantDoc archive and pinned engine sources. ISO builder compiles engines and runs isolated inference smoke tests."

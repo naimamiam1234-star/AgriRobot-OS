@@ -1,0 +1,10 @@
+[Unit]
+Description=Report local API boot readiness to serial console
+After=agrirobot.service
+Wants=agrirobot.service
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /opt/agrirobot/scripts/boot-readiness.sh
+TimeoutStartSec=100
+[Install]
+WantedBy=multi-user.target

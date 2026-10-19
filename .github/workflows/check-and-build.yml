@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+      - run: python3 -m pip install numpy==1.26.4
       - run: python3 -m unittest discover -v
       - run: bash -n iso/build.sh scripts/preflight.sh
   iso:
@@ -25,9 +26,11 @@ jobs:
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apt-get update && sudo apt-get install -y debootstrap ubuntu-keyring squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools dosfstools
+      - run: sudo apt-get update && sudo apt-get install -y debootstrap ubuntu-keyring squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools dosfstools python3-venv qemu-system-x86 ovmf
       - run: sudo bash iso/build.sh --build
+      - run: python3 tests/boot/run.py dist/AgriRobot-0.3-offline-ai-amd64.iso
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: AgriRobot-0.3-offline-AI-ISO
           path: dist/

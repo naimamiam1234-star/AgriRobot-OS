@@ -43,19 +43,23 @@ mkdir -p "$rootfs/opt/agrirobot" "$rootfs/etc/systemd/system" "$rootfs/var/lib/a
 cp -a app config docs data scripts "$rootfs/opt/agrirobot/"
 # Download on host, hash-check all required assets before copying into target.
 python3 -m app.assets --root "$work/assets"
+bash scripts/prepare-vision.sh "$work/assets"
 cp -a "$work/assets/." "$rootfs/opt/agrirobot/"
 chmod -R a+rX "$rootfs/opt/agrirobot"
 chroot "$rootfs" bash /opt/agrirobot/scripts/build-ai-engines.sh
+chroot "$rootfs" bash /opt/agrirobot/scripts/install-vision.sh
 # Prove inference without an external network, before packaging.
-unshare --net sh -c 'ip link set lo up; exec chroot "$1" python3 /opt/agrirobot/scripts/smoke-offline.py' sh "$rootfs"
+unshare --net sh -c 'ip link set lo up; exec chroot "$1" /opt/agrirobot/venv/bin/python /opt/agrirobot/scripts/smoke-offline.py' sh "$rootfs"
 cp "$rootfs/opt/agrirobot/docs/offline-inference-report.json" "$project_dir/dist/"
 cp config/assets.lock.json "$project_dir/dist/"
 cp iso/agrirobot-llm.service "$rootfs/etc/systemd/system/"
 chroot "$rootfs" useradd --system --home-dir /var/lib/agrirobot --shell /usr/sbin/nologin agrirobot
 chroot "$rootfs" chown agrirobot:agrirobot /var/lib/agrirobot
+cp iso/agrirobot-readiness.service "$rootfs/etc/systemd/system/"
 cp iso/agrirobot.service "$rootfs/etc/systemd/system/"
 mkdir -p "$rootfs/etc/systemd/system/multi-user.target.wants"
 ln -s /etc/systemd/system/agrirobot.service "$rootfs/etc/systemd/system/multi-user.target.wants/agrirobot.service"
+ln -s /etc/systemd/system/agrirobot-readiness.service "$rootfs/etc/systemd/system/multi-user.target.wants/agrirobot-readiness.service"
 echo agrirobot > "$rootfs/etc/hostname"
 printf '127.0.0.1 localhost\n127.0.1.1 agrirobot\n' > "$rootfs/etc/hosts"
 printf 'LANG=C.UTF-8\n' > "$rootfs/etc/default/locale"

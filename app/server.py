@@ -8,6 +8,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from .controller import Controller
 from .store import Store
+from .runtime import readiness
 
 
 def make_server(data_dir, token, port=8080, host='127.0.0.1'):
@@ -46,9 +47,13 @@ def make_server(data_dir, token, port=8080, host='127.0.0.1'):
             if not self.authorized():
                 return self.send_json(401, {'error': 'unauthorized'})
             if self.path == '/status':
+                installed = readiness(Path(__file__).resolve().parent.parent,
+                    json.loads((Path(__file__).resolve().parent.parent/'config/models.json').read_text()))
                 return self.send_json(200, {
                     'state': controller.state, 'mode': 'development_simulation_only',
-                    'hardware': 'not_implemented', 'models_bundled': False,
+                     'hardware': 'not_implemented',
+                    'models_bundled': all(v['status'] == 'installed_not_health_checked' for v in installed.values()),
+                    'ai_installation': installed,
                     'sensors': {'soil_moisture': None, 'temperature': None,
                                 'water_level': None, 'fertilizer_level': None},
                     'storage': 'operator_must_verify_persistence_on_live_usb'})
