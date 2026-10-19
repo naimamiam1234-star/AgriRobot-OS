@@ -1,0 +1,36 @@
+name: Prepare verified full plant and AI resources
+on:
+  push:
+    paths:
+      - 'config/assets.lock.json'
+      - '.github/workflows/prepare-resources.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  resources:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run unit tests
+        run: python3 -m unittest discover -v
+      - name: Download pinned assets and verify SHA256 and byte counts
+        run: python3 -m app.assets --root bundle
+      - name: Include notices and source metadata
+        run: |
+          mkdir -p bundle/licenses
+          cp config/assets.lock.json bundle/
+          cp docs/EXPANSION-STATUS-v0.2.md bundle/README-ar.md
+          cp docs/Controller-Self-Description-v1.md bundle/
+          cp data/plantdoc-full-verification.json bundle/
+          cp /usr/share/common-licenses/Apache-2.0 bundle/licenses/Qwen-Apache-2.0.txt
+          curl --fail --location --retry 2 https://raw.githubusercontent.com/openai/whisper/main/LICENSE -o bundle/licenses/OpenAI-Whisper-MIT.txt
+          echo 'Model weights only. No inference engines, firmware or trained crop detector are included. PlantDoc source archive contains its original license. Preserve all attribution when redistributing.' > bundle/NOTICE.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AgriRobot-PlantDoc-2578-and-Verified-AI-Resources-v02
+          path: bundle/
+          compression-level: 0
+          if-no-files-found: error
+          retention-days: 90

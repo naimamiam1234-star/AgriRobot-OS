@@ -18,6 +18,15 @@
       "sha256": "be07e048e1e599ad46341c8d2a135645097a538221678b7acdd1b1919c6e1b21",
       "size": 77691713,
       "license": "MIT"
+    },
+    {
+      "path": "data-full/PlantDoc-2578-Images.tar.gz",
+      "url": "https://codeload.github.com/pratikkayal/PlantDoc-Dataset/tar.gz/5467f6012d78d1c446145d5f582da6096f852ae8",
+      "source_page": "https://github.com/pratikkayal/PlantDoc-Dataset",
+      "revision": "5467f6012d78d1c446145d5f582da6096f852ae8",
+      "sha256": "9cfc8e56b0655e1e66a28c69f0f2d4a157117ffbbe8fb1dd035da7ea7fdc33b2",
+      "size": 983687060,
+      "license": "CC-BY-4.0"
     }
   ],
   "note": "Only assets with verified metadata and known license are locked. Engines and inference integration remain separate."

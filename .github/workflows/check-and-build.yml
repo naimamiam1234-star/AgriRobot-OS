@@ -19,7 +19,7 @@ jobs:
       - run: python3 -m unittest discover -v
       - run: bash -n iso/build.sh scripts/preflight.sh
   iso:
-    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.build_iso)
+    if: (github.event_name == 'push' && !contains(github.event.head_commit.message, '[assets-only]')) || (github.event_name == 'workflow_dispatch' && inputs.build_iso)
     needs: test
     runs-on: ubuntu-24.04
     timeout-minutes: 90
