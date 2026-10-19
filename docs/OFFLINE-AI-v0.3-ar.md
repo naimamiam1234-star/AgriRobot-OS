@@ -32,3 +32,5 @@ venv/bin/python -m app.assistant inspect /path/to/photo.jpg
 الحركة الحقيقية، ربط STM32/ESP32، المعايرة الحقلية، نموذج أمراض النباتات والحشرات المدرب، واجهة رسومية كاملة، وROS ليست مكتملة في هذا الإصدار. معلومات القطع تعتمد على تعريفات موثقة وأدلة قياس؛ الذكاء الاصطناعي لا يمكنه استنتاج جميع التوصيلات الكهربائية من منافذ GPIO. يظل التحكم الفيزيائي معطلًا. نظام Live يحتاج تخزينًا دائمًا لحفظ السجلات بعد إعادة التشغيل.
 
 اختبار QEMU يستخدم 4GiB RAM ومعالجين افتراضيين وTCG دون NIC؛ زمنه ليس وعدًا بسرعة جهاز الروبوت. الإقلاع الفعلي على اللوحة ودقة النماذج في الحقل يحتاجان اختبارات مستقلة.
+
+CPU build profile: x86_64 with SSE4.2, AVX, AVX2, F16C, FMA and BMI2. GGML_NATIVE is disabled but these backend defaults remain enabled; baseline amd64 without these extensions is not supported by this build. Validate target CPU before use.

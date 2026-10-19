@@ -22,3 +22,5 @@ The rootfs smoke gate runs actual inference in an isolated network namespace wit
 Build direct engine sources and original weights are pinned by SHA256 and byte count in config/assets.lock.json. Export/runtime Python direct versions are pinned, but transitive dependencies and wheel hashes are not fully locked; freeze manifests record what was resolved. This is not a fully reproducible binary build.
 
 Do not enable physical irrigation from the Live image. Persistent storage, hardware identity, wiring, calibration and field acceptance remain required. Measure boot time, peak RAM and inference latency on the target hardware; LZ4 and on-demand language model startup do not guarantee a specific speed.
+
+CPU build profile: x86_64 with SSE4.2, AVX, AVX2, F16C, FMA and BMI2. GGML_NATIVE is disabled but these backend defaults remain enabled; baseline amd64 without these extensions is not supported by this build. Validate target CPU before use.
