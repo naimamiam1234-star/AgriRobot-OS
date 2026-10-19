@@ -13,6 +13,7 @@ jobs:
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
+      - run: python3 -m pip install numpy==1.26.4
       - name: Run unit tests
         run: python3 -m unittest discover -v
       - name: Download pinned assets and verify SHA256 and byte counts
@@ -26,7 +27,7 @@ jobs:
           cp data/plantdoc-full-verification.json bundle/
           cp /usr/share/common-licenses/Apache-2.0 bundle/licenses/Qwen-Apache-2.0.txt
           curl --fail --location --retry 2 https://raw.githubusercontent.com/openai/whisper/main/LICENSE -o bundle/licenses/OpenAI-Whisper-MIT.txt
-          echo 'Model weights only. No inference engines, firmware or trained crop detector are included. PlantDoc source archive contains its original license. Preserve all attribution when redistributing.' > bundle/NOTICE.txt
+          echo 'Model weights only. Engine source archives only, no compiled inference engines or firmware or trained crop detector are included. PlantDoc source archive contains its original license. Preserve all attribution when redistributing.' > bundle/NOTICE.txt
       - uses: actions/upload-artifact@v4
         with:
           name: AgriRobot-PlantDoc-2578-and-Verified-AI-Resources-v02

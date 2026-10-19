@@ -41,3 +41,9 @@ Readiness now distinguishes installed files from healthy inference; 33 unit test
 Ruling: export generic YOLO11n to ONNX; install ONNX Runtime and OpenCV without PyTorch in target. Cost: custom postprocessing needs validation; two overlap/low-confidence regression tests added.
 Ruling: use explicit eSpeak NG Arabic formant voice instead of redistributing unclear Piper voice dataset. Cost: less natural speech. 36 unit tests pass after preserving the existing models_bundled API key with evidence-based value.
 Added actual ISO BIOS/UEFI boot gate, no NIC, serial API readiness marker; tests pending on build runner. No physical control or crop-trained model claim.
+
+Final review: fresh reviewer found two Important defects: bundled STT not discovered by documented CLI, stale QEMU READY logs. Both reproduced RED→GREEN with CLI sanitized-PATH and preseeded-log regression tests.
+Final: regraded incomplete models_bundled evidence as Important; readiness now includes ONNX model/runtime and speech output. Regression covers absent runtime with present model.
+Final: fixed missing NumPy setup in resource workflow, as demonstrated by failed run 39192595086. Build guide updated to avoid obsolete commands.
+Final: minor (deferred): transitive Python dependency/wheel hashes are not fully locked; freeze records installed versions but does not guarantee reproducible resolution.
+Final: minor (deferred): boot marker checks guest API only, not guest inference/authenticated status; report now explicitly states that scope. Rootfs inference is tested separately.

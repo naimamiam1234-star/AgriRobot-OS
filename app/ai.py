@@ -1,5 +1,6 @@
 """Optional local adapters. No downloads and no controller access."""
 import json
+import os
 import shutil
 import subprocess
 import tempfile
@@ -50,7 +51,8 @@ class LocalAI:
 
     def transcribe(self, audio_path):
         model = self.config.get('whisper_model', '')
-        exe = shutil.which('whisper-cli')
+        bundled = Path(__file__).resolve().parent.parent/'bin/whisper-cli'
+        exe = str(bundled) if bundled.is_file() and os.access(bundled, os.X_OK) else shutil.which('whisper-cli')
         if not exe or not model or not Path(model).is_file() or not Path(audio_path).is_file():
             return self.unavailable('whisper_or_audio_not_installed')
         with tempfile.TemporaryDirectory() as tmp:

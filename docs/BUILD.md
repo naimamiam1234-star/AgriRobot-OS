@@ -1,27 +1,24 @@
-# Development ISO builder
+# Offline AI development ISO builder
 
-Status: development ISO produced successfully in GitHub run 39189538104; boot tests are not yet run. This builds an Ubuntu development base with the local simulation API and reference library. It does NOT yet install ROS 2, AI engines/weights, visual UI, physical drivers or a disk installer. Secure Boot is not configured or tested. BIOS/UEFI boot has not been verified.
+The v0.3 recipe installs verified Qwen3, Whisper and YOLO11n weights, compiles pinned llama.cpp/whisper.cpp, exports ONNX vision, and installs Arabic eSpeak NG. See OFFLINE-AI-v0.3-ar.md for scope and commands. No trained crop/insect specialist, ROS, GUI, physical driver, disk installer or Secure Boot certification is claimed.
 
-Use a disposable Ubuntu 24.04 amd64 VM or build machine with mount/chroot capabilities and at least 30GB free disk. The build creates files and mountpoints under iso/work; it does not write an ISO to a USB device or overwrite a system disk. The recipe completed on a GitHub Ubuntu runner after fixing versioned kernel/initrd discovery.
+Use a disposable Ubuntu 24.04 amd64 build machine with mount/chroot/network-namespace capabilities and at least 40GB free disk. Network is required to build, not to run bundled inference. Building changes files under iso/work and dist; it never writes a disk device.
 
-```bash
+```sh
 sudo apt-get update
-sudo apt-get install debootstrap ubuntu-keyring squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools dosfstools
-python3 -m unittest discover -v
+sudo apt-get install debootstrap ubuntu-keyring squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools dosfstools python3-venv qemu-system-x86 ovmf
+python3 -m venv /tmp/agri-tests
+/tmp/agri-tests/bin/pip install numpy==1.26.4
+/tmp/agri-tests/bin/python -m unittest discover -v
 sudo bash scripts/preflight.sh
 sudo bash iso/build.sh --build
+python3 tests/boot/run.py dist/AgriRobot-0.3-offline-ai-amd64.iso
 ```
 
-The GitHub workflow offers the same build via workflow_dispatch after importing the source into a repository. Source is uploaded to naimamiam1234-star/AgriRobot-OS and run 39189538104 succeeded. Artifacts, if the workflow succeeds, are retained 7 days. A source ZIP is not an ISO.
+The workflow performs these checks on GitHub Ubuntu runners. Read the exact run conclusion: an in-progress or failed run is not a completed release. Artifacts are retained 30 days, include checksums, asset manifest, rootfs inference report, boot catalog and BIOS/UEFI logs. Failed boot runs may upload diagnostic artifacts; inspect boot-validation.json before use.
 
-## Required next validation
+The rootfs smoke gate runs actual inference in an isolated network namespace with loopback only. It checks Qwen response generation, Whisper's English JFK reference recording, general ONNX image inference and Arabic WAV generation. It does not measure field diagnosis accuracy, Arabic speech recognition accuracy or audible speech quality. QEMU BIOS/UEFI gates separately check the actual ISO's local API startup, 4GiB RAM, 2 CPUs, TCG, no NIC. They do not prove inference inside a booted guest or operation on physical hardware.
 
-Install QEMU and OVMF on the build machine. Verify both BIOS and UEFI boot, offline startup, /health, /status, service failure/restart and persistence across reboot. Use software emulation if KVM is unavailable; lack of KVM alone is not proof that QEMU cannot run.
+Build direct engine sources and original weights are pinned by SHA256 and byte count in config/assets.lock.json. Export/runtime Python direct versions are pinned, but transitive dependencies and wheel hashes are not fully locked; freeze manifests record what was resolved. This is not a fully reproducible binary build.
 
-```bash
-qemu-system-x86_64 -m 4096 -cdrom dist/AgriRobot-0.1-dev-amd64.iso -nic none
-```
-
-Do not use this development Live system for physical irrigation. Live storage may be temporary; no automatic repartitioning or persistence setup is supplied.
-
-Measure cold-boot readiness, peak RAM and model response time on the actual target hardware. LZ4 and on-demand model loading are design choices, not proof of a particular startup speed. The current container has no effective mount/chroot capabilities and lacks image-building tools; this blocks the conventional build here.
+Do not enable physical irrigation from the Live image. Persistent storage, hardware identity, wiring, calibration and field acceptance remain required. Measure boot time, peak RAM and inference latency on the target hardware; LZ4 and on-demand language model startup do not guarantee a specific speed.

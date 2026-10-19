@@ -22,3 +22,11 @@ class OfflineBundleTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             state = runtime.readiness(Path(d), {'language_model':'../elsewhere.gguf'})
             self.assertEqual(state['language']['status'], 'unavailable')
+
+    def test_vision_presence_alone_does_not_report_runtime_installed(self):
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);(root/'vision.onnx').touch()
+            with patch('importlib.util.find_spec',return_value=None):
+                state=runtime.readiness(root,{'vision_model':'vision.onnx'})
+            self.assertEqual(state.get('vision',{}).get('status'),'unavailable')
