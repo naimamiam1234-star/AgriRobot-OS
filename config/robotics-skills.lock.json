@@ -1,0 +1,831 @@
+{
+  "version": 1,
+  "skills": [
+    {
+      "name": "docker-ros2-development",
+      "repository": "arpitg1304/robotics-agent-skills",
+      "revision": "f9bc5467ff9ee3d23f1a1b0b29a649843bb6ad11",
+      "source_path": "skills/docker-ros2-development",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "8b94cbd591728c4ab2f0fb8d8accc15f705b4c2d8937d472415f453e31036c9e"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "robot-bringup",
+      "repository": "arpitg1304/robotics-agent-skills",
+      "revision": "f9bc5467ff9ee3d23f1a1b0b29a649843bb6ad11",
+      "source_path": "skills/robot-bringup",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "a3f8f20a68d2e6e250bfef68315fe92b3d15007b201f50d078f72885dca38f32"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "robot-perception",
+      "repository": "arpitg1304/robotics-agent-skills",
+      "revision": "f9bc5467ff9ee3d23f1a1b0b29a649843bb6ad11",
+      "source_path": "skills/robot-perception",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "3e6bc70bdeb9ff36a31d6b63991285954ab5bd2ff2289e836d98fc55f0bae574"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "robotics-design-patterns",
+      "repository": "arpitg1304/robotics-agent-skills",
+      "revision": "f9bc5467ff9ee3d23f1a1b0b29a649843bb6ad11",
+      "source_path": "skills/robotics-design-patterns",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "9d911e5462eac45ba165ef248504d4c0f17a67b30de538e48c634f83d7a09f86"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "robotics-security",
+      "repository": "arpitg1304/robotics-agent-skills",
+      "revision": "f9bc5467ff9ee3d23f1a1b0b29a649843bb6ad11",
+      "source_path": "skills/robotics-security",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "4ce441b8ddfb952ca09d4f747c6c72ba4a8366f76f02d7678b2de7964646b4c7"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "robotics-software-principles",
+      "repository": "arpitg1304/robotics-agent-skills",
+      "revision": "f9bc5467ff9ee3d23f1a1b0b29a649843bb6ad11",
+      "source_path": "skills/robotics-software-principles",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "d0a62379e726f26943e150896145f1e60c23a9b6525d09e2aad3a38130f64a7b"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "robotics-testing",
+      "repository": "arpitg1304/robotics-agent-skills",
+      "revision": "f9bc5467ff9ee3d23f1a1b0b29a649843bb6ad11",
+      "source_path": "skills/robotics-testing",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "2de46ea2c1d831c702b57d72d6ae8f8e47c208eec803476861df8de00a51eb0b"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "ros1",
+      "repository": "arpitg1304/robotics-agent-skills",
+      "revision": "f9bc5467ff9ee3d23f1a1b0b29a649843bb6ad11",
+      "source_path": "skills/ros1",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "f415dea885641c673be1637464335a4556878c541432c6ed6ed282edd5f09e24"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "ros2",
+      "repository": "arpitg1304/robotics-agent-skills",
+      "revision": "f9bc5467ff9ee3d23f1a1b0b29a649843bb6ad11",
+      "source_path": "skills/ros2",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "74a99de15b912a5afc6eafdf955a488c629c74ab4cada72007dfb25cdff23093"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "ros2-web-integration",
+      "repository": "arpitg1304/robotics-agent-skills",
+      "revision": "f9bc5467ff9ee3d23f1a1b0b29a649843bb6ad11",
+      "source_path": "skills/ros2-web-integration",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "e99ab0534cfb2b321bccfa752e3f6477f996319e32856d62980e27df186f3c95"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "rf-appium",
+      "repository": "manykarim/robotframework-agentskills",
+      "revision": "adf97355c3e960c0dcb96661cb744e1f6ab5ca7c",
+      "source_path": "skills/rf-appium",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "3bf67edcca842798d72accd26c939b38ff000ceef94329c1618fac328b9168e9"
+        },
+        {
+          "path": "assets/examples/android-basic.robot",
+          "sha256": "f08041ec846903e1e1df08bc792508bd6a29f5dc341a783e521fe90ea9f37abf"
+        },
+        {
+          "path": "assets/examples/gestures-example.robot",
+          "sha256": "5531346087ab567fdfeaaf6a94c5376c09940cbf7f5733315bc67f41c20b6e83"
+        },
+        {
+          "path": "assets/examples/hybrid-app.robot",
+          "sha256": "c0f90d316c8477dbdff29f4d2d3cf85ed85c0c2b51628a826ba45455d8108aab"
+        },
+        {
+          "path": "assets/examples/ios-basic.robot",
+          "sha256": "5f9f1ed9ca0f4310baa60c84f42e5248a27b466f5713c03f4ef1e49b3c67c097"
+        },
+        {
+          "path": "references/capabilities.md",
+          "sha256": "d77e08cdae2a588af6ead9f997a35fb4289fca14372f0566b67fcf701cc821e4"
+        },
+        {
+          "path": "references/gestures-touch.md",
+          "sha256": "72394eee6d3eea3d5b19f184b24cd3811475143830ae6d31f3957e7e005b3f04"
+        },
+        {
+          "path": "references/locators-mobile.md",
+          "sha256": "551b1323a84027dd60c5deb1f332962f967db7279220d652b79e00ab76052f4f"
+        },
+        {
+          "path": "references/platform-specific.md",
+          "sha256": "f91669cee1809a2c9430ad15767e75daaef70ab58b42f0a7ed5cbd2fd40b9d58"
+        },
+        {
+          "path": "references/troubleshooting.md",
+          "sha256": "3462f329bba382f7f771e3c1a15ac29711de086554f554d3e60bedcad9f93416"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "rf-browser",
+      "repository": "manykarim/robotframework-agentskills",
+      "revision": "adf97355c3e960c0dcb96661cb744e1f6ab5ca7c",
+      "source_path": "skills/rf-browser",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "1a0c16c9db53a42d3f289753ee1d1750e5c23f9ea024e17c3d5d2f8362212180"
+        },
+        {
+          "path": "assets/examples/authentication-flow.robot",
+          "sha256": "229761e8346f0e2b1d6799000fc3b0a8cb468ca67c6cfbfdecd2ce2fc6af2780"
+        },
+        {
+          "path": "assets/examples/basic-web-test.robot",
+          "sha256": "409bc371fbca430a52353b3bc60c4ed19d5f633b221003f2f6d425d253965f51"
+        },
+        {
+          "path": "assets/examples/form-handling.robot",
+          "sha256": "fc55383c4c9e78a299e7711505545382664a6f1690d038de144906bf2a40c54b"
+        },
+        {
+          "path": "assets/examples/iframe-shadow-dom.robot",
+          "sha256": "3ce01ff77b7bb0d5798657d00bed8a68901514bcb3813195783d868a66f6c844"
+        },
+        {
+          "path": "references/assertion-engine.md",
+          "sha256": "a4f3458d3a9532e50254384ee1cfd3b4f161aaf2afdc93ec06088589f9fdcf9f"
+        },
+        {
+          "path": "references/authentication-storage.md",
+          "sha256": "fb5da3a14ab525211162fb66aa3d69d1b5f3a321d575636e5536967d64b7866f"
+        },
+        {
+          "path": "references/browser-context-page.md",
+          "sha256": "ff2c8091b95f84f2a34a7a128efca3074f4eafd5e873a8cec4bff893226d7513"
+        },
+        {
+          "path": "references/downloads-uploads.md",
+          "sha256": "9b670ae0efe7c69154ad781f67f37d44811312669e71e1bc9fe9d3e8789dc502"
+        },
+        {
+          "path": "references/iframes-shadow-dom.md",
+          "sha256": "f660732c67ef6363d5f52607c90823d6dd04f42b109c93a3ab53e1b8ed17dda8"
+        },
+        {
+          "path": "references/locators.md",
+          "sha256": "3124abe66989f5e2e1df41c6b3e1a340143e1bb36cc1266bcf13f42c6c8d711d"
+        },
+        {
+          "path": "references/troubleshooting.md",
+          "sha256": "c3c7912d77bd44a5901894b3369752214c0d1e309709f0da4c7fa2cb2b8e4722"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "rf-language",
+      "repository": "manykarim/robotframework-agentskills",
+      "revision": "adf97355c3e960c0dcb96661cb744e1f6ab5ca7c",
+      "source_path": "skills/rf-language",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "3b536c105d9cc1741bae81db92cc1016e777daacea246aef1c6b716f8a4c17bc"
+        },
+        {
+          "path": "assets/examples/resources/api.resource",
+          "sha256": "50e03baf1891a327431c6818d551dd55f47ae34a36f64f0c4c95726283d8119e"
+        },
+        {
+          "path": "assets/examples/resources/calc.resource",
+          "sha256": "39fff4e595b2eafdb69c479e4e14f411d5bfc4134797d5a09d64353608b0d4d5"
+        },
+        {
+          "path": "assets/examples/resources/embedded.resource",
+          "sha256": "b0a84abf77680f8a5682797e9e604d34744c26615ac550dc26160ee9cbea6327"
+        },
+        {
+          "path": "assets/examples/resources/keywords.resource",
+          "sha256": "fc6d1e4e6946190352c61b9dbabec287702a12cc46a1e5b3539139456517de43"
+        },
+        {
+          "path": "assets/examples/resources/login.resource",
+          "sha256": "91f23578273b8da25f98c45e9693597552d0a3a2d4eb5ee230a2c5f3feb826b9"
+        },
+        {
+          "path": "assets/examples/tests/01__keyword_driven.robot",
+          "sha256": "e7ccd00dbf07fada60c6735d7f745a73f336d4de7174e05622ec75f7e54dae60"
+        },
+        {
+          "path": "assets/examples/tests/02__data_driven.robot",
+          "sha256": "a666459d1c47723bc31789173844d979ec92acde47d7a0bbe3d7a1a90aaeb31e"
+        },
+        {
+          "path": "assets/examples/tests/03__templates.robot",
+          "sha256": "af830877880cef88e6f1edf4fd06e8f8b7247c8bc44190934ed82d86d3222ce5"
+        },
+        {
+          "path": "assets/examples/tests/04__bdd.robot",
+          "sha256": "dd980277ba7393775f67d57db76a74d7c9b01a800590d6127fc1384dcaba97cd"
+        },
+        {
+          "path": "assets/examples/tests/05__embedded.robot",
+          "sha256": "1fe917c0cfaf1a75286c9e9e9a6708a3d414cdf9c1aa4df21f43af6740f0a9e6"
+        },
+        {
+          "path": "assets/examples/tests/__init__.robot",
+          "sha256": "4e2aa7ea58d19ee23e8247d7e3a27424f36d0596fcb3e1185e01fabb072fd244"
+        },
+        {
+          "path": "assets/examples/tests/api/__init__.robot",
+          "sha256": "9135aae75c339c03d573034f4446e8cd86d6fed81963fe315f6c34335daa10f4"
+        },
+        {
+          "path": "assets/examples/tests/api/users.robot",
+          "sha256": "b54491216855a7214093885fd69c6887a6675520d5b54fd6ed7766c50a4ce1a3"
+        },
+        {
+          "path": "assets/examples/tests/env.robot",
+          "sha256": "34da2f3657090c9b1387000fdbea002fb2e372e8b0f5b024ed806bc0286e42a4"
+        },
+        {
+          "path": "assets/examples/variables/common.py",
+          "sha256": "81784c13c53fc8dd90c18f9d9de4400a8bc3ebee18ad186666405f11e62c0aa9"
+        },
+        {
+          "path": "assets/examples/variables/dev.yaml",
+          "sha256": "602fa6ad978105f4eb5f0ef88507e7fda9df565ee86a58d668202aae5b7a711e"
+        },
+        {
+          "path": "assets/examples/variables/staging.yaml",
+          "sha256": "7fe30af75396f4319811e6fd5423a5308f603322a1af0f5c0d915831a5346278"
+        },
+        {
+          "path": "references/arguments.md",
+          "sha256": "2ad09a5b4e7a896449ad16e1f7c0e3bc027a3b8ad8c43c7c2a98abcb5ea0f7f6"
+        },
+        {
+          "path": "references/control-structures.md",
+          "sha256": "c7e110a007d418e0a37f7e01155764cfca20e19341ffa0235b9dcf240d8bdb94"
+        },
+        {
+          "path": "references/embedded-arguments.md",
+          "sha256": "5cd497475c3d25bbb085115762eb5af70a2fdfad562a2e2c580fa4d355726db9"
+        },
+        {
+          "path": "references/migration.md",
+          "sha256": "1173ffdb6be7434551253a292647753de936bf6d151ba48b42467bf117f57b06"
+        },
+        {
+          "path": "references/resources-and-variable-files.md",
+          "sha256": "d18f29792ac420c199032b6629dc4381e2a6b8661c5fa352ef39a850617325b0"
+        },
+        {
+          "path": "references/styles.md",
+          "sha256": "6c65cd7cd017e27cbc36fba64b16d244d8ab166a1fe4cc0373ce66683a561985"
+        },
+        {
+          "path": "references/suites-and-init.md",
+          "sha256": "a2342e2c929e312c09732a2b4f7d1ee37bbd8ad88a8fda3e3e897ccde87fb6b7"
+        },
+        {
+          "path": "references/tags-and-selection.md",
+          "sha256": "39d4b900295fa09ebbc826f86757205568e056d0754c84f1cdf52352682f9697"
+        },
+        {
+          "path": "references/templates.md",
+          "sha256": "29b62bb929ba271117a9a2f9f5543e15340ebf6eda35b65799e59a17fa8a18d5"
+        },
+        {
+          "path": "references/variables-and-scopes.md",
+          "sha256": "81cb49422ac7effc093a051c4a911ffa0f66fdda7b85166936f173547aba2490"
+        },
+        {
+          "path": "scripts/rf_conventions.py",
+          "sha256": "547377a68be6f92e0a819543efb90c50f0ab49e83233ea03ae922f3530d657be"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "rf-libdoc",
+      "repository": "manykarim/robotframework-agentskills",
+      "revision": "adf97355c3e960c0dcb96661cb744e1f6ab5ca7c",
+      "source_path": "skills/rf-libdoc",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "579269b550af1b7bf504ad3a637695903cb93b57b28563197f88ea42843c3982"
+        },
+        {
+          "path": "scripts/rf_libdoc.py",
+          "sha256": "f67955f4664fa14d2f220761dbed2ef8976806d6713acacb737012624ed48acc"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "rf-platynui",
+      "repository": "manykarim/robotframework-agentskills",
+      "revision": "adf97355c3e960c0dcb96661cb744e1f6ab5ca7c",
+      "source_path": "skills/rf-platynui",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "d73b87006d8b0ba5adfb6b4728f3abd40472941b05322388673f0d3f7b593d2b"
+        },
+        {
+          "path": "assets/examples/calculator.robot",
+          "sha256": "6b272d76f1b589a01bfc69d4b7ebf9d2202837b04e49c7a9ef996577d589c2ae"
+        },
+        {
+          "path": "assets/examples/mock-deterministic.robot",
+          "sha256": "61b7f4a6d5741f73e715e5e9e2a904266b8395c25984ea22af89b6f08aa3b023"
+        },
+        {
+          "path": "references/cli-and-inspector.md",
+          "sha256": "ead9452aa60cc13187dabfea994c919cd3b3c211c6db2cabda64f3b8a5e78111"
+        },
+        {
+          "path": "references/keywords-reference.md",
+          "sha256": "a4988521a9b08867bd5b93e2332befb8e4f12fe0706497f6ee960c6b94859e3f"
+        },
+        {
+          "path": "references/locators-and-queries.md",
+          "sha256": "db0d50d18bcf152360329541aca448f97ab826cbfabe5fced6f35b411b1969ac"
+        },
+        {
+          "path": "references/platform-setup.md",
+          "sha256": "d8b3ee768604ac0f9f3b900ff32c00ac5efd0eabcb6bb461541690945bc7599d"
+        },
+        {
+          "path": "references/status-and-migration.md",
+          "sha256": "c77ddb42e608d944a972a4b4d87d883b73b84ecad85e8339551c81e1ddd7fc00"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "rf-python-library",
+      "repository": "manykarim/robotframework-agentskills",
+      "revision": "adf97355c3e960c0dcb96661cb744e1f6ab5ca7c",
+      "source_path": "skills/rf-python-library",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "7af1388f7fff674024dd18d0c0d6c50fda2d86223807d2f68798573ca81b6dc5"
+        },
+        {
+          "path": "assets/examples/ExampleLibrary.py",
+          "sha256": "9901a25d9268376090620ba104405d4c1e984a0934fb175c0e9ebff6baca7925"
+        },
+        {
+          "path": "assets/examples/ResultListener.py",
+          "sha256": "2d04080e9823c667ea2c1e0f2c65c651e44d2866a97b7d962543cc5e5df5e5fe"
+        },
+        {
+          "path": "assets/examples/converters.py",
+          "sha256": "bd61854bcf78f6452969ce7944019fae7de7fa4675617ff5cb29733fcf637f23"
+        },
+        {
+          "path": "assets/examples/converters.robot",
+          "sha256": "63a013e6159e2f3c94c7ee6d09d4dbcd4f8bb9ed080995a0fbef6cce8fe16297"
+        },
+        {
+          "path": "assets/examples/example_library.robot",
+          "sha256": "e7b70bb1d34661bb6e0e18da52e8bd4e4b6cee411edd50384f03248f6415dd4f"
+        },
+        {
+          "path": "assets/examples/listener.robot",
+          "sha256": "4184c03b01a961ab0e5294859f4d4d2cce4d203ec2a210f22294ac8469e20f72"
+        },
+        {
+          "path": "references/api-variants.md",
+          "sha256": "00811bd756690326fef955dd61a422e7052ed683113e08b98b1ea8775b6227fc"
+        },
+        {
+          "path": "references/communication.md",
+          "sha256": "1e4450f1ab8a45061a0028ce2bbeeee90618d4153b2a998d946a52ac4505e6c0"
+        },
+        {
+          "path": "references/conversion.md",
+          "sha256": "434a1cbf17d0682d29538ba223e923d1010e47cf3bdb6d58c7e2403e30eb49bd"
+        },
+        {
+          "path": "references/listeners.md",
+          "sha256": "fac05ce59734eafb2cb33a228e2cd9af3536e61a86b89c275d7913231dedbbc6"
+        },
+        {
+          "path": "references/packaging-and-docs.md",
+          "sha256": "37e1dc8ed87597838f846f765ea8b33b43fa4e75ac0da4f181198d6c5df2fca7"
+        },
+        {
+          "path": "scripts/check_library.py",
+          "sha256": "77a6ba80c33fffb82dc81c9d57eed60d364e95c54532f5dbe3d2f721e655fb11"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "rf-requests",
+      "repository": "manykarim/robotframework-agentskills",
+      "revision": "adf97355c3e960c0dcb96661cb744e1f6ab5ca7c",
+      "source_path": "skills/rf-requests",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "c24da1a86af320b6d9bde0b8e8ad03b0d55ab3f3fa365154e7c0338008d8094e"
+        },
+        {
+          "path": "assets/examples/authentication-patterns.robot",
+          "sha256": "9a8db448b1107f99e0d49902919f224f59970fe1bfd6457a81ec069b68454344"
+        },
+        {
+          "path": "assets/examples/basic-crud.robot",
+          "sha256": "de0f922224725eea873df9e1ed992d45852530971c18ffb1bbd917f8635b62e8"
+        },
+        {
+          "path": "assets/examples/file-upload.robot",
+          "sha256": "1cbf2b593ec5c3ab9c2760b8dc6b31e8d08d12b70c5dce84315ceb96f69570d3"
+        },
+        {
+          "path": "assets/examples/session-handling.robot",
+          "sha256": "376db5bb4ed2e5364e6a01c65c50836c27bf4c76146cedca2c1cf2d5838de3f0"
+        },
+        {
+          "path": "references/authentication.md",
+          "sha256": "4fe59e9464bbbc75cf6a16a4a86512e121cf8e91cd6807d09ab448c99082177c"
+        },
+        {
+          "path": "references/request-options.md",
+          "sha256": "eb52c090e6727d556b4f9efd1f23442e7ffa201f6fe6239bcf31775ab1333a8f"
+        },
+        {
+          "path": "references/response-validation.md",
+          "sha256": "294d57690cf192d7be3772b902ce335b5f8b8c2bc87ddb75e1c86edf72c69d38"
+        },
+        {
+          "path": "references/troubleshooting.md",
+          "sha256": "d017235223078c405813f98064576c2c410b52d7edf183c39165b403306ccaa1"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "rf-restinstance",
+      "repository": "manykarim/robotframework-agentskills",
+      "revision": "adf97355c3e960c0dcb96661cb744e1f6ab5ca7c",
+      "source_path": "skills/rf-restinstance",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "9b7a500cfb24ea099b3ad9879e17b8ccc62dc9b540642415d4dbb6ef79ed3f9d"
+        },
+        {
+          "path": "assets/examples/basic-rest.robot",
+          "sha256": "b5dd377327d27bc0ca6a33e500c84eb8ae172cd6baf932a20ed91a474acd0e85"
+        },
+        {
+          "path": "assets/examples/schema-validation.robot",
+          "sha256": "877aaffbe1e159c04226a1b8c7753153a014a2fcd896c9e20ce867522c0a7c73"
+        },
+        {
+          "path": "assets/examples/schemas/user.json",
+          "sha256": "5b72075e47dc73c1e2a8bdd2281f75d2dfb9652cc302c8d50c320605a430dbd8"
+        },
+        {
+          "path": "references/authentication.md",
+          "sha256": "eb6c862084039e0be1cb419fb18ebc450d5a9023aec2c1f01826a086a43ba2a0"
+        },
+        {
+          "path": "references/json-handling.md",
+          "sha256": "dd024f0e8788d4d0f702df600c2cf7a25da3222e5867302b4df5aad130031f7e"
+        },
+        {
+          "path": "references/schema-validation.md",
+          "sha256": "cc08aee6878b2cf742eaeeed6f68c8126c921d3b65699be05a51b4e3b6541a25"
+        },
+        {
+          "path": "references/troubleshooting.md",
+          "sha256": "360e87a81335833d8dc21e43ca0316075e615558ad406e2921a8cbe9d6f47eda"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "rf-results",
+      "repository": "manykarim/robotframework-agentskills",
+      "revision": "adf97355c3e960c0dcb96661cb744e1f6ab5ca7c",
+      "source_path": "skills/rf-results",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "7ea67ede9264f5d4c6a478477be4d1bfaac1460bf4c90456909cf0e994fc71a0"
+        },
+        {
+          "path": "scripts/rf_results.py",
+          "sha256": "dd9ddab5eb7a3dfa69c75006df8e0688c52c7f6cdc2873e756dc7892588fa67b"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "rf-robotcode",
+      "repository": "manykarim/robotframework-agentskills",
+      "revision": "adf97355c3e960c0dcb96661cb744e1f6ab5ca7c",
+      "source_path": "skills/rf-robotcode",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "71d607780d4135e9a505c35bfc0a41853ffac9987c1a6560aa5055f2e4419688"
+        },
+        {
+          "path": "assets/examples/debug-at-failure.rdb",
+          "sha256": "c4f1a1d036952cf7b82c8529ad67e5a12d85cc0259d6d5a0d04f05b9875f6113"
+        },
+        {
+          "path": "assets/examples/debug_target.robot",
+          "sha256": "0d839161811b8a386f28e94ec914bc68c36646aad2e1bce5e4e1c308f64010b0"
+        },
+        {
+          "path": "assets/examples/explore-api.robotrepl",
+          "sha256": "8eaf2bc3edf220d4f897ad057b1f592d57133d0bc0d6eefc8e4fb2145a4c2d1b"
+        },
+        {
+          "path": "assets/examples/explore-browser.robotrepl",
+          "sha256": "5e54341d01c5d0eac2abe8052f155bbd86e0cd9f6e619664679000d7f078b817"
+        },
+        {
+          "path": "assets/examples/robot.toml",
+          "sha256": "68c53a6415f890613e8d19f71706f68704cdabb2785b2fbc1018c974c59a4162"
+        },
+        {
+          "path": "references/agent-mode.md",
+          "sha256": "e47e8a2dea5a13cb2e88e14454a9b63628b6bb6cd19a12b92e0a6c04c83d743a"
+        },
+        {
+          "path": "references/analyze.md",
+          "sha256": "604a4376bebfe9b489c499ae6ae8db7a90e247fe49996830bc497b8ce57fe78f"
+        },
+        {
+          "path": "references/debug.md",
+          "sha256": "de675e9de7ccaf4568897a35136c362e72a3bbf738646ec9dbbd82c7d385e1a9"
+        },
+        {
+          "path": "references/discover.md",
+          "sha256": "fd4f6407c9c55b0ac74cfe802b41b21b2d11618791bbe723a713bdc1850b91b3"
+        },
+        {
+          "path": "references/gotchas.md",
+          "sha256": "6b0f60b263056080b9440acbc07c7bd85b6e8b63e9cde1efe94a46c3ccd1edb7"
+        },
+        {
+          "path": "references/libdoc.md",
+          "sha256": "ced555680a34422b246208cf03d84cd283e446666fa15696f165572c46b94053"
+        },
+        {
+          "path": "references/repl.md",
+          "sha256": "71e4d25e29ad913949c45315928653a7055d6f6fa1614f2a38e6f16ea84e514e"
+        },
+        {
+          "path": "references/results.md",
+          "sha256": "c790529ee1bfe116e90c55436461a32455cf39723305b36c0266d31416f03caf"
+        },
+        {
+          "path": "references/run-and-wrapper.md",
+          "sha256": "7fcbf41b4822199e1967a5abc7ac043a1c104e1cd2d61a73c4c369b7fd81a57c"
+        },
+        {
+          "path": "references/setup-and-config.md",
+          "sha256": "5bdb181388039f5d834cbf8aecf641a484b2658ba9427dea5b4b8d677a0abafc"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "rf-selenium",
+      "repository": "manykarim/robotframework-agentskills",
+      "revision": "adf97355c3e960c0dcb96661cb744e1f6ab5ca7c",
+      "source_path": "skills/rf-selenium",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "6dcc1c47960fcc2d085280a553abf44f769226342221f01b82cd49a9751fc59a"
+        },
+        {
+          "path": "assets/examples/basic-web-test.robot",
+          "sha256": "c0838ed3099638a23883bf91c84507b69b64fe26ed8861e099b5617b6a175dcc"
+        },
+        {
+          "path": "assets/examples/multi-window.robot",
+          "sha256": "4fcfad234207392cb77538e3632fbabde843260f808c6721a72d8bdc12a6a86f"
+        },
+        {
+          "path": "assets/examples/wait-patterns.robot",
+          "sha256": "fd74835423c9f4a67c380d3a0bb483112cee68c52217011172e185bb4fbb3b19"
+        },
+        {
+          "path": "references/browser-setup.md",
+          "sha256": "1800d86217fca023849b4aed8f101e4077bb03d4157b1030597dee8805410b0f"
+        },
+        {
+          "path": "references/frames-windows.md",
+          "sha256": "9eb9734df96456bdbce095ec1c18b1b4eb591ea215fd3fca1a54a4cd7c3edfd2"
+        },
+        {
+          "path": "references/javascript-execution.md",
+          "sha256": "8b2d18342f2697bade903753d9de8a8b91f1a34f654db86b0d6f9bf3fbd4fd10"
+        },
+        {
+          "path": "references/locators.md",
+          "sha256": "c3ef14990daff6d5846d289b32c7732172a827e8fc69275303c025e94c447ec5"
+        },
+        {
+          "path": "references/troubleshooting.md",
+          "sha256": "4febd590fdd4845fe68b734e322f7be4e91e1f0d8e5c294c0901b2e1c26f2405"
+        },
+        {
+          "path": "references/waiting-strategies.md",
+          "sha256": "ae26745cb6d9618d60c18ff8801587ce45afc093d2bc264919f19ff221743da2"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    },
+    {
+      "name": "rf-setup",
+      "repository": "manykarim/robotframework-agentskills",
+      "revision": "adf97355c3e960c0dcb96661cb744e1f6ab5ca7c",
+      "source_path": "skills/rf-setup",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "d8f4f8c8b3442be263c0285fdacb7037e2068e434394fd56fcbe6138967d9d65"
+        },
+        {
+          "path": "assets/examples/github-actions-robot.yml",
+          "sha256": "13a4e574ce875361bdeb404a0293b3b138b8d36217fe50111ae54c3a48d2fbdc"
+        },
+        {
+          "path": "assets/examples/gitignore.txt",
+          "sha256": "59933b5bd38c38554f7edd951383377a65cbdb2e99a55a0e56c684d17d2d1733"
+        },
+        {
+          "path": "assets/examples/pyproject.poetry.toml",
+          "sha256": "4802ddb2817873014d6e5bfcd0331c9027808d41939f371921d711b63b439ad3"
+        },
+        {
+          "path": "assets/examples/pyproject.uv.toml",
+          "sha256": "c1549a2f5a2191f82b0ba6bf687260b92987a7f770347d670ae47391dcc96dad"
+        },
+        {
+          "path": "assets/examples/requirements.txt",
+          "sha256": "07cb1584b47c32c2bdee1ccc95c70883901fb03f8b76716c18fda742c7487887"
+        },
+        {
+          "path": "assets/examples/robot.toml",
+          "sha256": "2eb75849296bec98110dcca611ca2923cfa5aba2b415231db9af647f6ab02715"
+        },
+        {
+          "path": "assets/examples/smoke.robot",
+          "sha256": "6279aaa8fa9f443e3970dfe0df7741a0e9b84e384369f7ac8e805079d8640dba"
+        },
+        {
+          "path": "references/ci.md",
+          "sha256": "195633dc999f7a481f80b1e63305b60a8a81ff061b6c71fd3de3b51eb0182666"
+        },
+        {
+          "path": "references/cli-tools.md",
+          "sha256": "ede47aaf64508084ba3552ad8d1434093b98f95272b7d59e40baecd0f5124b93"
+        },
+        {
+          "path": "references/libraries.md",
+          "sha256": "72a7031e3f365e820db59619ab80b35df89a31e145175aa59d2404d58b74719b"
+        },
+        {
+          "path": "references/poetry.md",
+          "sha256": "5c679614ef5b8c302a775e4c4ee051a82656ff70f77fa8ae7411fd31346bb48f"
+        },
+        {
+          "path": "references/project-layout.md",
+          "sha256": "872267c58f7e41d1ab09db93610265b7c27d0bc1a6e3b56913ad962cb5a4a633"
+        },
+        {
+          "path": "references/troubleshooting.md",
+          "sha256": "9464479008b5005ba8d676c453ae7c4929987264cea885ad3a8f0e619d330110"
+        },
+        {
+          "path": "references/uv.md",
+          "sha256": "bb34bdb8ef72c5ce9dbe78cc08eb534532d2c6629eaa6be15ea61d087c54ce0c"
+        },
+        {
+          "path": "references/venv-pip.md",
+          "sha256": "47899b9e05c0487761cbfbef25ad6fa86c325f2b4ee552376122ec1080253b9f"
+        }
+      ],
+      "installation": "developer_skill_not_robot_policy"
+    }
+  ],
+  "framework_references": [
+    {
+      "repo": "NVlabs/ASPIRE",
+      "name": "ASPIRE",
+      "revision": "fa00f0ef2bc1d91d594b9aa502c22133c9f538f7",
+      "notes": "Research workspace: preserve development, validation and held-out seed boundaries; evaluate terminal physical outcomes, not prose reports. Its language-generated Python trials are not a sandbox. Keep simulation separate from device control and use its calibrated robot runbooks only for the specified robot. It is not a pre-trained agricultural policy."
+    },
+    {
+      "repo": "mani-skill/ManiSkill",
+      "name": "ManiSkill",
+      "revision": "62ff3a5896b4d5b4cf0ac4c8d79afe600c9404a3",
+      "notes": "Simulation/training framework based on SAPIEN. Record robot embodiment, task, seed, simulator/version, sensors and success criterion. Verify Vulkan/rendering and actual CPU/GPU capability before choosing workloads. Dataset/assets licenses differ from code licenses (README specifies non-commercial assets). Simulation success does not validate real-world irrigation."
+    },
+    {
+      "repo": "RobotLabLTH/SkiROS2",
+      "name": "SkiROS2",
+      "revision": "c4438e71a25978b14c30191539e4de68943fe863",
+      "notes": "Model a skill using preconditions, invariants/hold conditions and postconditions. Use a world model with provenance and freshness; behavior-tree failure must lead to explicit recovery. Despite its name, the selected master README documents ROS1/catkin and describes a ROS2 port as work in progress; do not assume Jazzy compatibility. License metadata was unclassified; inspect LICENSE.md before copying code."
+    },
+    {
+      "repo": "FurhatRobotics/example-skills",
+      "name": "Furhat",
+      "revision": "59b4b4e9ec86f00f9051d7e668b01b04546fd6f7",
+      "notes": "Social interaction examples require the Furhat SDK/robot, usually Kotlin/Gradle. Reuse interaction-state and ASR recovery concepts through project-specific code; do not import SDK-dependent executables into AgriRobot. A spoken acknowledgment is not proof of actuator execution. Repository reports MIT; verify SDK's separate terms before use."
+    }
+  ]
+}

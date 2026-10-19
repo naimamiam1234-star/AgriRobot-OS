@@ -40,7 +40,7 @@ chroot "$rootfs" apt-get update
 mapfile -t packages < iso/packages.list
 chroot "$rootfs" env DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends "${packages[@]}"
 mkdir -p "$rootfs/opt/agrirobot" "$rootfs/etc/systemd/system" "$rootfs/var/lib/agrirobot"
-cp -a app config docs data scripts "$rootfs/opt/agrirobot/"
+cp -a app config docs data scripts skills "$rootfs/opt/agrirobot/"
 # Download on host, hash-check all required assets before copying into target.
 python3 -m app.assets --root "$work/assets"
 bash scripts/prepare-vision.sh "$work/assets"

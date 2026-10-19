@@ -1,0 +1,4 @@
+interface:
+  display_name: "AgriRobot Robotics"
+  short_description: "Develop and validate offline agricultural robot systems"
+  default_prompt: "Use AgriRobot robotics guidance to develop and validate the agricultural robot."
