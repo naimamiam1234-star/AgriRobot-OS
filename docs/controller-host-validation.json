@@ -1,0 +1,96 @@
+{
+  "source_commit": "63d5ddfd2d11f850a3f2c938c134b5479adc4ce9",
+  "run_id": 39318401981,
+  "artifact": {
+    "id": 12218623943,
+    "name": "AgriRobot-0.3-offline-AI-ISO",
+    "size": 3302211907,
+    "expires": "2026-11-18T20:32:45Z",
+    "digest": "sha256:7bc8c53717d63224dbab5e2edc7128d55f272daddd4d8f5e4b40d28a3dd944c4"
+  },
+  "source_tests": 51,
+  "boot": {
+    "bios": {
+      "status": "passed",
+      "seconds_to_api_marker": 96.01,
+      "network": "no_NIC",
+      "ram_mib": 4096,
+      "cpus": 2,
+      "acceleration": "TCG",
+      "scope": "guest_API_readiness_only_inference_tested_separately_in_rootfs"
+    },
+    "uefi": {
+      "status": "passed",
+      "seconds_to_api_marker": 104.01,
+      "network": "no_NIC",
+      "ram_mib": 4096,
+      "cpus": 2,
+      "acceleration": "TCG",
+      "scope": "guest_API_readiness_only_inference_tested_separately_in_rootfs"
+    }
+  },
+  "rootfs_inference": {
+    "network": "isolated_namespace_loopback_only",
+    "tests": {
+      "language": {
+        "status": "passed",
+        "seconds": 1.5,
+        "sample_output": "مرحبا!",
+        "agronomic_accuracy": "not_evaluated"
+      },
+      "speech_to_text": {
+        "status": "passed",
+        "seconds": 1.2,
+        "sample_output": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+        "arabic_accuracy": "not_evaluated"
+      },
+      "speech_output": {
+        "status": "passed",
+        "engine": "espeak-ng_formant",
+        "arabic_listening_quality": "not_evaluated"
+      },
+      "vision": {
+        "status": "passed",
+        "seconds": 0.45,
+        "scope": "COCO_general_detector_not_crop_diagnosis",
+        "detections": [
+          {
+            "class": 49,
+            "name": "orange",
+            "confidence": 0.8031813502311707,
+            "box": [
+              455.64186573028564,
+              438.4298086166382,
+              1556.4019060134888,
+              1472.6120567321777
+            ]
+          },
+          {
+            "class": 47,
+            "name": "apple",
+            "confidence": 0.5268515348434448,
+            "box": [
+              0,
+              128.26812744140625,
+              522.313642501831,
+              1358.1672620773315
+            ]
+          },
+          {
+            "class": 47,
+            "name": "apple",
+            "confidence": 0.4885202646255493,
+            "box": [
+              355.3830814361572,
+              2365.1009273529053,
+              1524.7773742675781,
+              2698.9084911346436
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "physical_hardware": "not_tested_no_actuation_driver",
+  "review": "controller-host-review.md"
+}

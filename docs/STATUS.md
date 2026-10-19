@@ -39,3 +39,9 @@ The preflight unit fixture assumes an unprivileged/unprovisioned initial test ho
 CPU profile: x86_64, SSE4.2/AVX/AVX2/F16C/FMA/BMI2. GGML_NATIVE=OFF does not disable these backend defaults. Check target CPU; this is not a baseline-only amd64 build.
 
 Robotics skills: 22 upstream developer/test skills plus one AgriRobot integration skill; see ROBOTICS-SKILLS-ar.md. Existing ISO artifact 12161056066 was independently checksum/boot-validated; skills are included in future builds.
+
+Latest completed image: run 39318401981 (source commit 63d5ddfd2d11f850a3f2c938c134b5479adc4ce9). Includes controller host layer and 23 developer skill entrypoints. 51 tests and four rootfs inference smoke checks passed; BIOS 96.01s and UEFI 104.01s passed without NIC under QEMU TCG. Full evidence: controller-host-validation.json; review: controller-host-review.md.
+
+Download: https://github.com/naimamiam1234-star/AgriRobot-OS/actions/runs/39318401981/artifacts/12218623943
+
+The image remains a development Live system. No live controller transport, firmware, physical motion/irrigation, full GUI, ROS runtime or crop-specific trained model is completed by this change.
