@@ -52,8 +52,7 @@ printf 'LANG=C.UTF-8\n' > "$rootfs/etc/default/locale"
 chroot "$rootfs" update-initramfs -u -k all
 chroot "$rootfs" dpkg-query -W --showformat='${Package} ${Version}\n' > "$image/casper/filesystem.manifest"
 cp "$image/casper/filesystem.manifest" "$image/casper/filesystem.manifest-desktop"
-cp -L "$rootfs/vmlinuz" "$image/casper/vmlinuz"
-cp -L "$rootfs/initrd.img" "$image/casper/initrd"
+bash scripts/copy-boot.sh "$rootfs" "$image/casper"
 chroot "$rootfs" apt-get clean
 rm -f "$rootfs/usr/sbin/policy-rc.d" "$rootfs/etc/machine-id"
 touch "$rootfs/etc/machine-id"

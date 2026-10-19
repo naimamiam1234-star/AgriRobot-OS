@@ -29,3 +29,5 @@ Final: minor (deferred): preflight test expects an underprivileged/unprovisioned
 Final: minor (deferred): real inference, timeout/memory-pressure and device tests remain unrun; adapter missing-dependency test does not exercise a subprocess. Simulation persistent=True is a test-mode flag, not a Live-storage guarantee.
 
 Ruling: ship a development source archive and separate reference-photo archive now; do not invent a completed ISO or a trained disease model. Cost: another build/test phase is required before a bootable or field-capable release.
+
+GitHub integration: uploaded 74 files preserving the user's initial commit and README, then started run 39189185620. Its test job passed; ISO build reached kernel installation and failed because root-level /vmlinuz is absent (Ubuntu kernel links are inside /boot). Added a version-paired /boot discovery/copy helper and regression fixture. This fixes the observed failure; subsequent build result must be checked separately.
