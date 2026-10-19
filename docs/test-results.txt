@@ -1,0 +1,30 @@
+test_bad_prompt_rejected (tests.test_adapters.AdapterTests.test_bad_prompt_rejected) ... ok
+test_missing_executables_and_models_are_unavailable (tests.test_adapters.AdapterTests.test_missing_executables_and_models_are_unavailable) ... ok
+test_no_shell_interpolation_and_missing_camera (tests.test_adapters.AdapterTests.test_no_shell_interpolation_and_missing_camera) ... ok
+test_local_reply_malformed_and_redirect (tests.test_ai_transport.TransportTests.test_local_reply_malformed_and_redirect) ... ok
+test_builder_no_arguments_does_not_mutate (tests.test_build.BuildTests.test_builder_no_arguments_does_not_mutate) ... ok
+test_preflight_reports_capability_or_missing_tools (tests.test_build.BuildTests.test_preflight_reports_capability_or_missing_tools) ... ok
+test_all_photos_attributed_and_intact (tests.test_catalog.CatalogTests.test_all_photos_attributed_and_intact) ... ok
+test_results_are_reference_only (tests.test_catalog.CatalogTests.test_results_are_reference_only) ... ok
+test_search_english_disease_and_arabic_insect (tests.test_catalog.CatalogTests.test_search_english_disease_and_arabic_insect) ... ok
+test_approval_and_persistence_required (tests.test_controller.ControllerTests.test_approval_and_persistence_required) ... ok
+test_daily_limit_and_independent_channels (tests.test_controller.ControllerTests.test_daily_limit_and_independent_channels) ... ok
+test_disabled_on_start_and_no_real_driver (tests.test_controller.ControllerTests.test_disabled_on_start_and_no_real_driver) ... ok
+test_duplicate_rejected_after_restart (tests.test_controller.ControllerTests.test_duplicate_rejected_after_restart) ... ok
+test_invalid_identifiers_and_nonboolean_approval (tests.test_controller.ControllerTests.test_invalid_identifiers_and_nonboolean_approval) ... ok
+test_invalid_volumes_never_reserved (tests.test_controller.ControllerTests.test_invalid_volumes_never_reserved) ... ok
+test_pending_dose_blocks_enable (tests.test_controller.ControllerTests.test_pending_dose_blocks_enable) ... ok
+test_stop_and_link_loss_require_explicit_enable (tests.test_controller.ControllerTests.test_stop_and_link_loss_require_explicit_enable) ... ok
+test_recursive_unmount_required_and_failure_blocks_packaging (tests.test_mount_cleanup.MountCleanupTests.test_recursive_unmount_required_and_failure_blocks_packaging) ... ok
+test_traversal_missing_license_and_missing_file (tests.test_resources.ResourceTests.test_traversal_missing_license_and_missing_file) ... ok
+test_valid_file_and_checksum (tests.test_resources.ResourceTests.test_valid_file_and_checksum) ... ok
+test_health_local_and_status_authenticated (tests.test_service.ServiceTests.test_health_local_and_status_authenticated) ... ok
+test_no_physical_endpoint (tests.test_service.ServiceTests.test_no_physical_endpoint) ... ok
+test_no_unauthorized_or_browser_mutations (tests.test_service.ServiceTests.test_no_unauthorized_or_browser_mutations) ... ok
+test_oversized_and_nonobject_json (tests.test_service.ServiceTests.test_oversized_and_nonobject_json) ... ok
+test_simulation_and_duplicate (tests.test_service.ServiceTests.test_simulation_and_duplicate) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 3.156s
+
+OK

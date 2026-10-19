@@ -1,0 +1,10 @@
+{
+  "language_model": "models/Qwen3-0.6B-Q4_K_M.gguf",
+  "local_port": 8081,
+  "whisper_model": "models/ggml-tiny.bin",
+  "piper_model": "models/ar_JO-kareem-medium.onnx",
+  "vision_model": "models/yolo11n.pt",
+  "status": "paths_reserved_weights_not_bundled_or_tested",
+  "smolvlm": "optional_not_integrated",
+  "note": "Verify every model license, exact revision and SHA256 before installing. Piper additionally needs its .onnx.json configuration. No agricultural model is trained in this release."
+}

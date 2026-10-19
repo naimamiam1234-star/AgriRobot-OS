@@ -1,0 +1,12 @@
+linux-generic
+casper
+initramfs-tools
+systemd-sysv
+python3
+ca-certificates
+network-manager
+iproute2
+locales
+less
+curl
+sudo

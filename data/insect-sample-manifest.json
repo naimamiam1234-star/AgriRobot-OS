@@ -1,0 +1,67 @@
+[
+  {
+    "path": "data/images/Bemisia_tabaci_from_USDA_2.jpg",
+    "label_original": "Bemisia tabaci",
+    "label_ar": "الذبابة البيضاء",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Bemisia_tabaci_from_USDA_2.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Bemisia_tabaci_from_USDA_2.jpg",
+    "attribution": "Stephen Ausmus / USDA ARS",
+    "license": "Public domain (USDA ARS)",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-USDA-ARS",
+    "changes": "none",
+    "sha256": "99b242100f7a9e12a3030cec1f99d072fecf24c2feccdc97139968aa107a14a5",
+    "purpose": "reference_only_not_training_split"
+  },
+  {
+    "path": "data/images/Tuta_absoluta_(52465714396).jpg",
+    "label_original": "Tuta absoluta",
+    "label_ar": "حفار أوراق الطماطم",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/d/df/Tuta_absoluta_%2852465714396%29.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Tuta_absoluta_(52465714396).jpg",
+    "attribution": "Ben Sale",
+    "license": "CC-BY-2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "changes": "none",
+    "sha256": "96f84900a13a92f7a195086b82536c7101225bb76c8625c87b1d556e0a5f49a8",
+    "purpose": "reference_only_not_training_split"
+  },
+  {
+    "path": "data/images/Myzus_persicae.jpg",
+    "label_original": "Myzus persicae",
+    "label_ar": "من الخوخ الأخضر",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/1/11/Myzus_persicae.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Myzus_persicae.jpg",
+    "attribution": "Scott Bauer / USDA ARS",
+    "license": "Public domain (USDA ARS)",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-USDA-ARS",
+    "changes": "none",
+    "sha256": "63abd1b26cae3c1e4e958d07aacad8cf6319ccd5b8f481cf58fdbf89a5f40d04",
+    "purpose": "reference_only_not_training_split"
+  },
+  {
+    "path": "data/images/Frankliniella_occidentalis_5364132-LGPT.jpg",
+    "label_original": "Frankliniella occidentalis",
+    "label_ar": "تربس الأزهار الغربي",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Frankliniella_occidentalis_5364132-LGPT.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Frankliniella_occidentalis_5364132-LGPT.jpg",
+    "attribution": "Frank Peairs, Colorado State University, Bugwood.org",
+    "license": "CC-BY-3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "changes": "none",
+    "sha256": "29a24b8dcc251d9644210e01feb75130db1852ed3fb328c5046e06172f3f5701",
+    "purpose": "reference_only_not_training_split"
+  },
+  {
+    "path": "data/images/Female_medfly.jpg",
+    "label_original": "Ceratitis capitata",
+    "label_ar": "ذبابة فاكهة البحر المتوسط",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Female_medfly.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Female_medfly.jpg",
+    "attribution": "Scott Bauer / USDA ARS (description credit)",
+    "license": "Public domain (USDA ARS)",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-USDA-ARS",
+    "changes": "none",
+    "sha256": "35b560020c65d370a2a789e8175d8971e7f4a03ca272f8566b05de846ef0461f",
+    "purpose": "reference_only_not_training_split"
+  }
+]

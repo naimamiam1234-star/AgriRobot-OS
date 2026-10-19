@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.superpowers/
+runtime/
+iso/work/
+dist/
+*.gguf
+*.bin
