@@ -47,3 +47,5 @@ Final: regraded incomplete models_bundled evidence as Important; readiness now i
 Final: fixed missing NumPy setup in resource workflow, as demonstrated by failed run 39192595086. Build guide updated to avoid obsolete commands.
 Final: minor (deferred): transitive Python dependency/wheel hashes are not fully locked; freeze records installed versions but does not guarantee reproducible resolution.
 Final: minor (deferred): boot marker checks guest API only, not guest inference/authenticated status; report now explicitly states that scope. Rootfs inference is tested separately.
+
+Build diagnosis: run 39192331936 compiled llama-server/llama-cli successfully but whisper CMake failed because git was absent in target rootfs (ggml requires find_program GIT_EXE). Added git to signed Ubuntu package list; full rebuild required. This is a build dependency failure, not a model inference result.
