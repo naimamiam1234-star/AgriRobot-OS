@@ -1,0 +1,11 @@
+{
+  "source_commit": "5467f6012d78d1c446145d5f582da6096f852ae8",
+  "verified_images": 2578,
+  "expected_images": 2578,
+  "missing": [],
+  "hash_mismatches": [],
+  "archive_sha256": "9cfc8e56b0655e1e66a28c69f0f2d4a157117ffbbe8fb1dd035da7ea7fdc33b2",
+  "compressed_bytes": 983687060,
+  "purpose": "source_reference_not_trained_model",
+  "license": "CC-BY-4.0 per source repository"
+}

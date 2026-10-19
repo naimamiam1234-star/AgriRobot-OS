@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "path": "models/Qwen3-0.6B-Q4_0.gguf",
+      "url": "https://huggingface.co/ggml-org/Qwen3-0.6B-GGUF/resolve/b5f37287796e5be0ea3dab2e7430873fb3f73e49/Qwen3-0.6B-Q4_0.gguf",
+      "source_page": "https://huggingface.co/ggml-org/Qwen3-0.6B-GGUF",
+      "revision": "b5f37287796e5be0ea3dab2e7430873fb3f73e49",
+      "sha256": "da2572f16c06133561ce56accaa822216f2391ef4d37fba427801cd6736417d4",
+      "size": 428970080,
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "models/ggml-tiny.bin",
+      "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/5359861c739e955e79d9a303bcbc70fb988958b1/ggml-tiny.bin",
+      "source_page": "https://huggingface.co/ggerganov/whisper.cpp",
+      "revision": "5359861c739e955e79d9a303bcbc70fb988958b1",
+      "sha256": "be07e048e1e599ad46341c8d2a135645097a538221678b7acdd1b1919c6e1b21",
+      "size": 77691713,
+      "license": "MIT"
+    }
+  ],
+  "note": "Only assets with verified metadata and known license are locked. Engines and inference integration remain separate."
+}
