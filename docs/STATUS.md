@@ -12,7 +12,8 @@
 | 102 IP102 category names | Reference list included; IP102 photos NOT bundled |
 | External disease knowledge | Source links and license notes; no full third-party corpus mirrored |
 | Ubuntu ISO recipe and GitHub workflow | Written; shell syntax/preflight/unmount regression tested |
-| Actual ISO file and BIOS/UEFI boot | NOT PRODUCED / NOT RUN |
+| Actual ISO file | Produced by successful GitHub run 39189538104; development base only |
+| BIOS/UEFI boot | Boot catalog contains both entries; actual boot NOT RUN |
 | Startup speed and RAM benchmarks | NOT RUN on target hardware |
 | ROS 2 integration and GUI | Planned, not implemented |
 | STM32 serial protocol / firmware / real movement | Planned, not implemented |
@@ -24,3 +25,9 @@ Limits: unit tests do not certify field safety or a plant diagnosis. The API use
 Review: a fresh read-only reviewer found a recursive-unmount problem in the initial builder; fixed with a RED-to-GREEN regression. Loopback AI transport was hardened to reject redirects and ignore proxies, tested with an actual local HTTP fixture. No second review was claimed.
 
 Deferred test limitation: the preflight unit test currently expects an unprovisioned/unprivileged host, as in this environment and the workflow's initial test job. On a fully provisioned privileged machine it must be adapted to use isolated prerequisite fixtures. The builder's own preflight is separate and is intended to succeed on such a machine. Missing-dependency adapter tests do not prove runtime memory behavior, timeouts or real inference.
+
+Build result: https://github.com/naimamiam1234-star/AgriRobot-OS/actions/runs/39189538104
+
+Artifact: https://github.com/naimamiam1234-star/AgriRobot-OS/actions/runs/39189538104/artifacts/12159411593
+
+Artifact archive size: 1,174,222,355 bytes; expires 2026-10-26. The generated ISO contains the development API and reference library, not AI weights or hardware actuation. Final test suite: 27 tests passed locally and in GitHub Actions.
