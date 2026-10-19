@@ -40,7 +40,17 @@ chroot "$rootfs" apt-get update
 mapfile -t packages < iso/packages.list
 chroot "$rootfs" env DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends "${packages[@]}"
 mkdir -p "$rootfs/opt/agrirobot" "$rootfs/etc/systemd/system" "$rootfs/var/lib/agrirobot"
-cp -a app config docs data "$rootfs/opt/agrirobot/"
+cp -a app config docs data scripts "$rootfs/opt/agrirobot/"
+# Download on host, hash-check all required assets before copying into target.
+python3 -m app.assets --root "$work/assets"
+cp -a "$work/assets/." "$rootfs/opt/agrirobot/"
+chmod -R a+rX "$rootfs/opt/agrirobot"
+chroot "$rootfs" bash /opt/agrirobot/scripts/build-ai-engines.sh
+# Prove inference without an external network, before packaging.
+unshare --net sh -c 'ip link set lo up; exec chroot "$1" python3 /opt/agrirobot/scripts/smoke-offline.py' sh "$rootfs"
+cp "$rootfs/opt/agrirobot/docs/offline-inference-report.json" "$project_dir/dist/"
+cp config/assets.lock.json "$project_dir/dist/"
+cp iso/agrirobot-llm.service "$rootfs/etc/systemd/system/"
 chroot "$rootfs" useradd --system --home-dir /var/lib/agrirobot --shell /usr/sbin/nologin agrirobot
 chroot "$rootfs" chown agrirobot:agrirobot /var/lib/agrirobot
 cp iso/agrirobot.service "$rootfs/etc/systemd/system/"
@@ -61,8 +71,8 @@ mounts=()
 du -sx --block-size=1 "$rootfs" | cut -f1 > "$image/casper/filesystem.size"
 mksquashfs "$rootfs" "$image/casper/filesystem.squashfs" -noappend -comp lz4
 cp iso/grub.cfg "$image/boot/grub/grub.cfg"
-printf 'AgriRobot 0.1 development\n' > "$image/README.diskdefines"
-grub-mkrescue -o "$project_dir/dist/AgriRobot-0.1-dev-amd64.iso" "$image"
-sha256sum dist/AgriRobot-0.1-dev-amd64.iso > dist/SHA256SUMS
-xorriso -indev dist/AgriRobot-0.1-dev-amd64.iso -report_el_torito plain 2>&1 | tee dist/boot-catalog.txt
-echo 'ISO created; QEMU BIOS/UEFI tests still required. Not a complete offline AI release.'
+printf 'AgriRobot 0.3 offline AI development\n' > "$image/README.diskdefines"
+grub-mkrescue -o "$project_dir/dist/AgriRobot-0.3-offline-ai-amd64.iso" "$image"
+sha256sum dist/AgriRobot-0.3-offline-ai-amd64.iso > dist/SHA256SUMS
+xorriso -indev dist/AgriRobot-0.3-offline-ai-amd64.iso -report_el_torito plain 2>&1 | tee dist/boot-catalog.txt
+echo 'ISO created; QEMU BIOS/UEFI tests still required. Physical robot and crop diagnosis remain unvalidated.'

@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       build_iso:
-        description: Build unvalidated development ISO (no AI weights or physical drivers)
+        description: Build unvalidated development ISO (bundled local AI; physical drivers unvalidated)
         required: true
         default: false
         type: boolean
@@ -22,13 +22,13 @@ jobs:
     if: (github.event_name == 'push' && !contains(github.event.head_commit.message, '[assets-only]')) || (github.event_name == 'workflow_dispatch' && inputs.build_iso)
     needs: test
     runs-on: ubuntu-24.04
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - run: sudo apt-get update && sudo apt-get install -y debootstrap ubuntu-keyring squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools dosfstools
       - run: sudo bash iso/build.sh --build
       - uses: actions/upload-artifact@v4
         with:
-          name: AgriRobot-development-ISO-unvalidated
+          name: AgriRobot-0.3-offline-AI-ISO
           path: dist/
-          retention-days: 7
+          retention-days: 30

@@ -10,3 +10,5 @@ locales
 less
 curl
 sudo
+build-essential
+cmake

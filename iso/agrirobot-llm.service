@@ -1,0 +1,15 @@
+[Unit]
+Description=AgriRobot local language model (start on demand)
+After=local-fs.target
+[Service]
+User=agrirobot
+Group=agrirobot
+WorkingDirectory=/opt/agrirobot
+ExecStart=/opt/agrirobot/bin/llama-server --model /opt/agrirobot/models/Qwen3-0.6B-Q4_0.gguf --host 127.0.0.1 --port 8081 --ctx-size 2048 --parallel 1 --threads 2 --jinja
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+MemoryMax=2G

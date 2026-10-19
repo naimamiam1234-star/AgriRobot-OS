@@ -27,7 +27,25 @@
       "sha256": "9cfc8e56b0655e1e66a28c69f0f2d4a157117ffbbe8fb1dd035da7ea7fdc33b2",
       "size": 983687060,
       "license": "CC-BY-4.0"
+    },
+    {
+      "path": "sources/llama.cpp.tar.gz",
+      "url": "https://codeload.github.com/ggml-org/llama.cpp/tar.gz/4762ad7316dcdec20016ab5985fb46a27902204d",
+      "source_page": "https://github.com/ggml-org/llama.cpp",
+      "revision": "4762ad7316dcdec20016ab5985fb46a27902204d",
+      "sha256": "06b6a3a1c2d12becc05d02c701274ab1f6d033399b4a20a166b919289e19233c",
+      "size": 25256607,
+      "license": "MIT"
+    },
+    {
+      "path": "sources/whisper.cpp.tar.gz",
+      "url": "https://codeload.github.com/ggml-org/whisper.cpp/tar.gz/51c6961c7b64b406833f4b6a4a20e67142f69225",
+      "source_page": "https://github.com/ggml-org/whisper.cpp",
+      "revision": "51c6961c7b64b406833f4b6a4a20e67142f69225",
+      "sha256": "37d66f2a4dd6d3d13d9ffcebd376b9e865a1737df61d3618ba79de7a9ac0f81e",
+      "size": 6217890,
+      "license": "MIT"
     }
   ],
-  "note": "Only assets with verified metadata and known license are locked. Engines and inference integration remain separate."
+  "note": "Verified weights, full PlantDoc archive and pinned engine sources. ISO builder compiles engines and runs isolated inference smoke tests."
 }

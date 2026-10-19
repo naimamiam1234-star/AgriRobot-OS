@@ -31,3 +31,9 @@ Final: minor (deferred): real inference, timeout/memory-pressure and device test
 Ruling: ship a development source archive and separate reference-photo archive now; do not invent a completed ISO or a trained disease model. Cost: another build/test phase is required before a bootable or field-capable release.
 
 GitHub integration: uploaded 74 files preserving the user's initial commit and README, then started run 39189185620. Its test job passed; ISO build reached kernel installation and failed because root-level /vmlinuz is absent (Ubuntu kernel links are inside /boot). Added a version-paired /boot discovery/copy helper and regression fixture. This fixes the observed failure; subsequent build result must be checked separately.
+
+## Offline inference integration — 2026-10-19
+Resuming approved ISO plan tasks 3, 5 and 6 under executing-plans.
+Ruling: compile pinned llama.cpp b6000 and whisper.cpp v1.7.5 inside target rootfs; preserve verified source archives in ISO. Generic CPU build, no GPU required. Cost: lower performance than per-device tuning.
+Added real network-isolated inference gate before ISO packaging (Qwen Arabic response, Whisper English reference recording). Arabic transcription accuracy and agronomic accuracy remain not evaluated.
+Readiness now distinguishes installed files from healthy inference; 33 unit tests pass locally. ISO/inference build result pending.

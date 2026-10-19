@@ -3,6 +3,7 @@ Description=AgriRobot local development API
 After=local-fs.target
 
 [Service]
+Environment=PATH=/opt/agrirobot/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 Type=simple
 User=agrirobot
 Group=agrirobot
