@@ -49,3 +49,5 @@ Final: minor (deferred): transitive Python dependency/wheel hashes are not fully
 Final: minor (deferred): boot marker checks guest API only, not guest inference/authenticated status; report now explicitly states that scope. Rootfs inference is tested separately.
 
 Build diagnosis: run 39192331936 compiled llama-server/llama-cli successfully but whisper CMake failed because git was absent in target rootfs (ggml requires find_program GIT_EXE). Added git to signed Ubuntu package list; full rebuild required. This is a build dependency failure, not a model inference result.
+
+Actual build run 39192878940 succeeded: all four offline inference checks passed; ISO artifact 12161056066 (3,301,800,581-byte ZIP). Its boot step failed before guest startup: root-owned dist prevented QEMU log/OVMF writes as runner. Logs show Permission denied, not an ISO boot failure. Fix future workflow ownership and independently boot the exact existing immutable artifact (ID + SHA256SUMS), without rebuilding. Independent validation uploads logs/checksum separately; do not claim boot success until it passes.

@@ -28,6 +28,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: sudo apt-get update && sudo apt-get install -y debootstrap ubuntu-keyring squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools dosfstools python3-venv qemu-system-x86 ovmf
       - run: sudo bash iso/build.sh --build
+      - run: sudo chown -R "$(id -u):$(id -g)" dist
       - run: python3 tests/boot/run.py dist/AgriRobot-0.3-offline-ai-amd64.iso
       - uses: actions/upload-artifact@v4
         if: always()

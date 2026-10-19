@@ -1,0 +1,39 @@
+name: Validate exact built offline AI ISO
+on:
+  push:
+    paths:
+      - '.github/workflows/validate-built-iso.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  boot:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y qemu-system-x86 ovmf
+      - uses: actions/download-artifact@v4
+        with:
+          artifact-ids: '12161056066'
+          run-id: '39192878940'
+          github-token: ${{ github.token }}
+          path: dist
+          merge-multiple: true
+      - name: Verify exact ISO checksum from original build
+        run: sha256sum -c dist/SHA256SUMS
+      - name: Boot exact ISO without network in BIOS and UEFI
+        run: python3 tests/boot/run.py dist/AgriRobot-0.3-offline-ai-amd64.iso
+      - name: Upload independent validation evidence
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: AgriRobot-0.3-exact-ISO-boot-validation
+          path: |
+            dist/boot-*.log
+            dist/boot-validation.json
+            dist/offline-inference-report.json
+            dist/SHA256SUMS
+            dist/assets.lock.json
+          retention-days: 90
