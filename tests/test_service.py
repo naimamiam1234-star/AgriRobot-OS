@@ -57,3 +57,11 @@ class ServiceTests(unittest.TestCase):
 
     def test_no_physical_endpoint(self):
         self.assertEqual(self.req('POST', '/hardware/enable', {}, True)[0], 404)
+
+    def test_robot_context_is_authenticated_read_only_and_unconfigured(self):
+        self.assertEqual(self.req('GET','/robot/context')[0],401)
+        status,data=self.req('GET','/robot/context',auth=True)
+        self.assertEqual(status,200)
+        self.assertEqual(data['boards'],[])
+        self.assertFalse(data['physical_output'])
+        self.assertEqual(self.req('POST','/robot/context',{},True)[0],404)

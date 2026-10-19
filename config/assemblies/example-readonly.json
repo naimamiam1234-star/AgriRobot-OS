@@ -1,0 +1,11 @@
+{
+  "boards": [
+    {
+      "board_id": "sensor-board",
+      "firmware": "agri-sensor-1",
+      "components": [
+        {"id": "soil", "port": "ANALOG_SOIL", "unit": "raw"}
+      ]
+    }
+  ]
+}

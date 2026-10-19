@@ -8,12 +8,12 @@
 | Full offline asset downloads | Successful GitHub resource run 39192823835, SHA256/size verified |
 | Actual rootfs inference | Qwen, Whisper, ONNX and eSpeak passed in build run 39192878940, network-isolated namespace |
 | Actual ISO BIOS/UEFI boot | Both passed in exact-artifact validation run 39193640954, no NIC, 70.01s per mode on TCG |
-| Source tests | 39 unit tests passed locally and on the current GitHub test job |
+| Source tests | 51 unit tests passed locally and on the current GitHub test job |
 | PlantDoc | All 2578 source images downloaded, matched to source Git blobs; archive bundled by recipe |
 | Reference catalog | 28 plant-leaf and 5 insect photos, individual attribution and SHA256 verified |
 | IP102 | 102 reference class names only; restricted dataset photos not bundled |
 | Agricultural diagnosis model | Not trained or field evaluated; generic YOLO is explicitly not a crop diagnosis |
-| Controller self-description | Design specification exists; physical firmware implementation not complete |
+| Controller self-description | Read-only host registry, bounded CRC codec, replay CLI and authenticated context implemented/tested; live transport/firmware pending |
 | Physical movement and water/fertilizer actuation | Not implemented, no physical driver exposed |
 | ROS and graphical operator UI | Planned, not implemented |
 | Internet/cloud/weather sync | Local operation works independently of internet; cloud integrations not implemented |

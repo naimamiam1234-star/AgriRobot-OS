@@ -9,15 +9,17 @@ from pathlib import Path
 from .controller import Controller
 from .store import Store
 from .runtime import readiness
+from .device_registry import DeviceRegistry
 
 
-def make_server(data_dir, token, port=8080, host='127.0.0.1'):
+def make_server(data_dir, token, port=8080, host='127.0.0.1', assembly=None):
     if not isinstance(token, str) or not token:
         raise ValueError('authentication_token_required')
     data_dir = Path(data_dir)
     data_dir.mkdir(parents=True, exist_ok=True)
     store = Store(data_dir / 'events.db')
     controller = Controller(store)
+    registry = DeviceRegistry(assembly if assembly is not None else {"boards": []})
 
     class Handler(BaseHTTPRequestHandler):
         def setup(self):
@@ -57,6 +59,8 @@ def make_server(data_dir, token, port=8080, host='127.0.0.1'):
                     'sensors': {'soil_moisture': None, 'temperature': None,
                                 'water_level': None, 'fertilizer_level': None},
                     'storage': 'operator_must_verify_persistence_on_live_usb'})
+            if self.path == '/robot/context':
+                return self.send_json(200, registry.context())
             if self.path == '/events':
                 return self.send_json(200, {'events': store.events(), 'doses': store.doses()})
             return self.send_json(404, {'error': 'not_found'})
@@ -94,12 +98,14 @@ def make_server(data_dir, token, port=8080, host='127.0.0.1'):
     server = ThreadingHTTPServer((host, port), Handler)
     server.store = store
     server.controller = controller
+    server.registry = registry
     return server
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--data', default='runtime')
+    parser.add_argument('--assembly', help='Validated expected-device assembly JSON; no automatic probing')
     parser.add_argument('--host', default='127.0.0.1')
     parser.add_argument('--port', type=int, default=8080)
     args = parser.parse_args()
@@ -110,7 +116,8 @@ def main():
         fd = os.open(token_file, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
         with os.fdopen(fd, 'w') as stream:
             stream.write(secrets.token_urlsafe(32))
-    server = make_server(root, token_file.read_text().strip(), args.port, args.host)
+    assembly = json.loads(Path(args.assembly).read_text()) if args.assembly else None
+    server = make_server(root, token_file.read_text().strip(), args.port, args.host, assembly)
     print(f'AgriRobot API http://{args.host}:{server.server_port} — development, no physical actuation', flush=True)
     try:
         server.serve_forever()
